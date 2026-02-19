@@ -2,7 +2,7 @@
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
-file_path = "C:\大学\数据分析\lesson8\cities.txt"
+file_path = "cities.txt"
 
 try:
     X1 = []
@@ -74,7 +74,7 @@ plt.xlim(5, 25)
 plt.ylim(-5, 25)
 plt.xlabel('population')
 plt.ylabel('profit')
-plt.title('Name:Ouyang JH, k=1')
+plt.title('k=1')
 plt.legend()
 plt.show()
 
@@ -95,7 +95,7 @@ plt.colorbar(contour, label='Cost Function (J)')
 plt.scatter(theta_1[0], theta_1[1], c='red', label='θ0, θ1', marker='x')
 plt.xlabel('θ0')
 plt.ylabel('θ1')
-plt.title('Name:Ouyang JH, k=1')
+plt.title('k=1')
 plt.show()
 
 yk_500 = theta_500[1] * xk + theta_500[0]
@@ -105,7 +105,7 @@ plt.xlim(5, 25)
 plt.ylim(-5, 25)
 plt.xlabel('population')
 plt.ylabel('profit')
-plt.title('Name:Ouyang JH, k=500')
+plt.title('k=500')
 plt.legend()
 plt.show()
 
@@ -114,7 +114,7 @@ plt.colorbar(contour, label='Cost Function (J)')
 plt.scatter(theta_500[0], theta_500[1], c='red', label='θ0, θ1', marker='x')
 plt.xlabel('θ0')
 plt.ylabel('θ1')
-plt.title('Name:Ouyang JH, k=500')
+plt.title('k=500')
 plt.show()
 
 yk_1000 = theta_1000[1] * xk + theta_1000[0]
@@ -124,7 +124,7 @@ plt.xlim(5, 25)
 plt.ylim(-5, 25)
 plt.xlabel('population')
 plt.ylabel('profit')
-plt.title('Name:Ouyang JH, k=1000')
+plt.title('k=1000')
 plt.legend()
 plt.show()
 
@@ -133,7 +133,7 @@ plt.colorbar(contour, label='Cost Function (J)')
 plt.scatter(theta_1000[0], theta_1000[1], c='red', label='θ0, θ1', marker='x')
 plt.xlabel('θ0')
 plt.ylabel('θ1')
-plt.title('Name:Ouyang JH, k=1000')
+plt.title('k=1000')
 plt.show()
 
 yk_5000 = theta_5000[1] * xk + theta_5000[0]
@@ -143,7 +143,7 @@ plt.xlim(5, 25)
 plt.ylim(-5, 25)
 plt.xlabel('population')
 plt.ylabel('profit')
-plt.title('Name:Ouyang JH, k=5000')
+plt.title('k=5000')
 plt.legend()
 plt.show()
 
@@ -152,7 +152,7 @@ plt.colorbar(contour, label='Cost Function (J)')
 plt.scatter(theta_5000[0], theta_5000[1], c='red', label='θ0, θ1', marker='x')
 plt.xlabel('θ0')
 plt.ylabel('θ1')
-plt.title('Name:Ouyang JH, k=5000')
+plt.title('k=5000')
 plt.show()
 
 yk_last = theta_last[1] * xk + theta_last[0]
@@ -162,7 +162,7 @@ plt.xlim(5, 25)
 plt.ylim(-5, 25)
 plt.xlabel('population')
 plt.ylabel('profit')
-plt.title(f'Name:Ouyang JH, k={d}')
+plt.title(f'k={d}')
 plt.legend()
 plt.show()
 
@@ -171,7 +171,7 @@ plt.colorbar(contour, label='Cost Function (J)')
 plt.scatter(theta_last[0], theta_last[1], c='red', label='θ0, θ1', marker='x')
 plt.xlabel('θ0')
 plt.ylabel('θ1')
-plt.title(f'Name:Ouyang JH, k={d}')
+plt.title(f'k={d}')
 plt.show()
 -----------------------------------------------------------------------------------------------
 X = np.column_stack((np.ones_like(X), X))
@@ -180,4 +180,5 @@ theta = np.linalg.inv(X.T.dot(X)).dot(X.T).dot(y)
 
 theta0, theta1 = theta
 print("正规方程求解最优参数 (θ0, θ1):", theta0, theta1)
+
 
