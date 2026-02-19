@@ -2,7 +2,7 @@
 import numpy as np
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
-filename = r'C:\大学\数据分析\lesson13\hw13data.mat'
+filename = 'hw13data.mat'
 data = loadmat(filename)
 X = np.array(data['X'])
 Y = np.array(data['y'])
@@ -12,7 +12,7 @@ Xtest = np.array(data['Xtest'])
 Ytest = np.array(data['ytest'])
 
 plt.scatter(X, Y, color='blue', marker='o', label='Points')
-plt.title('Name:OuYang JH,the training set')
+plt.title('the training set')
 plt.xlabel('Change in water level(X)')
 plt.ylabel('Water flowing out of the dam(Y)')
 plt.legend()
@@ -49,7 +49,7 @@ xk = np.linspace(-50, 40, 1000)
 yk_1 = theta[1] * xk + theta[0]
 plt.plot(xk, yk_1, label='Line', color='blue')
 plt.scatter(X, Y, color='red', marker='o', label='Points')
-plt.title('Name:OuYang JH,the training set')
+plt.title('the training set')
 plt.xlabel('Change in water level(X)')
 plt.ylabel('Water flowing out of the dam(Y)')
 plt.legend()
@@ -68,6 +68,7 @@ for k in range(m):
         theta1[1] = theta1[1] - (0.001 / m) * sum2
     for n in range(k+1):
         sum += (1 / (2 * (k+1))) * ((np.matmul(X1[n, :], theta) - Y[n]) ** 2)
+
 
 
 
