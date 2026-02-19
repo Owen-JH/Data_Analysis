@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import scipy.stats as stats
 import statsmodels.api as sm
-filename1 = r'C:\大学\数据分析\lesson4\mathmetician.xls'
+filename1 = r'mathmetician.xls'
 data1 = pd.read_excel(filename1)
 n = data1.shape[0]
 p = data1.shape[1]
@@ -62,7 +62,7 @@ y0_hat_right = y0_hat + t_percentile*temp
 print('y0_hat=', y0_hat)
 print('y0的置信度为95%的置信区间为', y0_hat_left, y0_hat_right)
 ----------------------------------------------------------------------------------------------
-filename2 = r'C:\大学\数据分析\lesson4\cosmetics.xls'
+filename2 = r'cosmetics.xls'
 data2 = pd.read_excel(filename2)
 n = data2.shape[0]
 p = data2.shape[1]
@@ -153,6 +153,7 @@ y1_hat_left = y1_hat - t_percentile*temp
 y1_hat_right = y1_hat + t_percentile*temp
 print('y0_hat=', y1_hat)
 print('y0的置信度为95%的置信区间为', y1_hat_left, y1_hat_right)
+
 
 
 
