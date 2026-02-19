@@ -3,7 +3,7 @@ import pandas as pd
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 from itertools import groupby
-filename1 = r'C:\大学\数据分析\lesson1\SerumProteinComponents.xls'
+filename1 = r'SerumProteinComponents.xls'
 data1 = pd.read_excel(filename1, header=None)
 x1 = data1.values.flatten()
 W1, p_value1 = stats.shapiro(x1)
@@ -27,7 +27,7 @@ else:
 stats.anderson(x1, dist='norm')
 stats.kstest(x1, 'norm')
 ------------------------------------------------------------------------------------------------------
-filename2 = r'C:\大学\数据分析\lesson3\test_score.xls'
+filename2 = r'test_score.xls'
 data2 = pd.read_excel(filename2, header=None)
 x2 = data2.values.flatten()
 W2, p_value2 = stats.shapiro(x2)
@@ -54,7 +54,7 @@ if ks_p_value < alpha:
 else:
     print("无法拒绝 H0，数据可能符合 Weibull 分布。")
 ------------------------------------------------------------------------------------------------------------
-filename3 = r'C:\大学\数据分析\lesson3\height.xls'
+filename3 = r'lesson3\height.xls'
 data3 = pd.read_excel(filename3, header=None)
 x3 = data3.values.flatten()
 xbar3 = np.mean(x3)
@@ -85,7 +85,7 @@ plt.rcParams['font.family'] = 'SimHei'
 plt.hist(x3, bins=5, edgecolor='k')
 plt.xlabel('身高')
 plt.ylabel('人数')
-plt.title('60名11岁学生身高直方图-欧阳嘉华')
+plt.title('60名11岁学生身高直方图')
 plt.show()
 for k, g in groupby(sorted(x3), key=lambda x: int(x)//10):
     lst = map(str, [int(_)%10 for _ in list(g)])
@@ -98,7 +98,7 @@ if p_value3 < alpha:
 else:
     print("无法拒绝 HO，数据可能符合正态分布。")
 -------------------------------------------------------------------------------------------------------
-filename4 = r'C:\大学\数据分析\lesson3\finance.xls'
+filename4 = r'finance.xls'
 data4 = pd.read_excel(filename4, header=None)
 for column_name in data4.columns:
     if pd.api.types.is_numeric_dtype(data4[column_name]):  # 检查列是否为数字类型
@@ -151,7 +151,7 @@ print("p-value:", p_value1)
 print("Spearman相关系数:", correlation_coefficient2)
 print("p-value:", p_value2)
 --------------------------------------------------------------------------------------------------------
-filename5 = r'C:\大学\数据分析\lesson3\blood.xls'
+filename5 = r'blood.xls'
 data5 = pd.read_excel(filename5, header=None)
 xbar5 = data5.mean(axis=0)
 cov = data5.cov()
@@ -177,6 +177,7 @@ for i in range(data5.shape[1]):
         rij = stats.spearmanr(data5.iloc[:, i], data5.iloc[:, j])
         spearman_p[i, j] = rij[1]
 print("Spearman相关性检验:\n",spearman_p)
+
 
 
 
