@@ -4,7 +4,7 @@ import pandas as pd
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 import itertools
-filename1 = r'mathmetician.xls'
+filename1 = 'mathmetician.xls'
 data1 = pd.read_excel(filename1)
 n = data1.shape[0]
 p = data1.shape[1]
@@ -86,7 +86,7 @@ plt.xlabel('x3')
 plt.ylabel('epsilon_hat')
 plt.show()
 ----------------------------------------------------------------------------------
-filename2 = r'liver.xls'
+filename2 = 'liver.xls'
 data2 = pd.read_excel(filename2, header=None)
 n = data2.shape[0]
 p = data2.shape[1]
@@ -264,7 +264,7 @@ plt.xlabel('λ')
 plt.ylabel('SSE')
 plt.show()
 -------------------------------------------------------------------------------------
-filename3 = r'liver.xls'
+filename3 = 'liver.xls'
 data3 = pd.read_excel(filename3, header=None)
 n = data3.shape[0]
 p = data3.shape[1]
@@ -303,6 +303,7 @@ for combination_length in range(1, X.shape[1] + 1):
         d = y-y_hat
         PRESS = sum(d**2)
         print('PRESS:', PRESS)
+
 
 
 
