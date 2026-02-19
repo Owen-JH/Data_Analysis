@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import loadmat
 
-filename1 = r'C:\大学\数据分析\lesson11\hw11data.mat'
-filename2 = r'C:\大学\数据分析\lesson11\hw11weights.mat'
+filename1 = 'hw11data.mat'
+filename2 = 'hw11weights.mat'
 data = loadmat(filename1)
 X = data['X']
 Y = data['y']
@@ -75,6 +75,7 @@ for i in range(5000):
 total_identical_rows = np.sum(row_equality)
 percentage = total_identical_rows/X.shape[0]
 print(f"预测精度为: {percentage}")
+
 
 
 
