@@ -1,14 +1,13 @@
 import numpy as np
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
-filename = r'C:\大学\数据分析\lesson15\K-means.mat'
+filename = 'K-means.mat'
 data = loadmat(filename)
 X = np.array(data['X'])
 
 x = X[:, 0]
 y = X[:, 1]
 plt.scatter(x, y, color='blue', marker='o', label='Points')
-plt.title('Name:OuYang JH')
 plt.legend()
 plt.show()
 
@@ -38,9 +37,10 @@ for k in range(K):
         trajectory_y = [history[k][1] for history in centroids_history]
         plt.plot(trajectory_x, trajectory_y, marker='o', linestyle='-', color='black')
 
-plt.title('Name:OuYang JH, Iteration number 10')
+plt.title('Iteration number 10')
 plt.legend()
 plt.show()
+
 
 
 
