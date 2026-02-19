@@ -6,7 +6,7 @@ from scipy.stats import skew, kurtosis
 from scipy.stats import norm
 from statsmodels.distributions.empirical_distribution import ECDF
 import statsmodels.api as stm
-filename1 = 'C:\大学\数据分析\lesson1\SerumProteinComponents.xls'
+filename1 = 'SerumProteinComponents.xls'
 data1 = pd.read_excel(filename1, header=None)
 x = data1.values.flatten()
 xbar = np.mean(x)
@@ -29,7 +29,7 @@ for k in x:
 #--------------------------------------------------------------------------------------
 plt.rcParams['font.family'] = 'SimHei'
 name_count = {}
-filename2 = 'C:\大学\数据分析\lesson2\drinkbrands.xlsx'
+filename2 = 'drinkbrands.xlsx'
 data2 = pd.read_excel(filename2, header=None)
 for col in data2.columns:
     for name in data2[col]:
@@ -45,7 +45,7 @@ plt.figure(figsize=(8, 6))
 plt.bar(name_count.keys(), name_count.values())
 plt.xlabel('饮料品牌')
 plt.ylabel('频数')
-plt.title('饮料销售情况条形图-欧阳嘉华')
+plt.title('饮料销售情况条形图')
 plt.xticks(rotation=45)
 plt.show()
 
@@ -53,29 +53,29 @@ plt.figure(figsize=(8, 6))
 plt.hist(name_count.values(), bins=5, edgecolor='k')
 plt.xlabel('饮料品牌')
 plt.ylabel('频数')
-plt.title('饮料销售情况柱状图-欧阳嘉华')
+plt.title('饮料销售情况柱状图')
 plt.show()
 
 plt.figure(figsize=(8, 6))
 plt.pie(name_count.values(), labels=name_count.keys(), autopct='%1.1f%%', startangle=140)
-plt.title('饮料销售情况饼图-欧阳嘉华')
+plt.title('饮料销售情况饼图')
 plt.axis('equal')
 plt.show()
 #----------------------------------------------------------------------------------------------------
-filename3 = 'C:\大学\数据分析\lesson2\ComputerSales.xls'
+filename3 = 'ComputerSales.xls'
 data3 = pd.read_excel(filename3, header=None)
 x1 = data3.values.flatten()
 plt.rcParams['font.family'] = 'SimHei'
 plt.hist(x1, bins=5, edgecolor='k')
 plt.xlabel('销量')
 plt.ylabel('频数')
-plt.title('电脑公司销售情况直方图-欧阳嘉华')
+plt.title('电脑公司销售情况直方图')
 plt.show()
 for k, g in groupby(sorted(x1), key=lambda x: int(x)//10):
     lst = map(str, [int(_)%10 for _ in list(g)])
     print('%2d | %s'%(k, ' '.join(lst)))
 #------------------------------------------------------------------------------------
-filename4 = 'C:\大学\数据分析\lesson2\eg1d3data.xls'
+filename4 = 'eg1d3data.xls'
 data4 = pd.read_excel(filename4, header=None)
 result = pd.DataFrame(columns=['列名', '均值', '中位数', '上四分位数', '下四分位数', '方差', '标准差', '极差', '四分位极差', '偏度', '峰度'])
 
@@ -106,10 +106,10 @@ for column_name in data4.columns[1:6]:
         '峰度': [kurtosis_value]
     })], ignore_index=True)
 
-result.to_excel('C:\大学\数据分析\lesson2\数字特征结果.xlsx', index=False)
+result.to_excel('数字特征结果.xlsx', index=False)
 #-----------------------------------------------------------------------------------------
 plt.rcParams['font.family'] = 'DejaVu Sans'
-filename5 = 'C:\大学\数据分析\lesson1\SerumProteinComponents.xls'
+filename5 = 'SerumProteinComponents.xls'
 data5 = pd.read_excel(filename5, header=None)
 x5 = data5.values.flatten()
 mu, std = norm.fit(x5)
@@ -138,6 +138,7 @@ plt.xlabel('Theoretical Quantiles')
 plt.ylabel('Ordered Values')
 plt.title('Probability Plot')
 plt.show()
+
 
 
 
