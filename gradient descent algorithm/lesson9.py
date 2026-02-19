@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-filename1 = r'C:\大学\数据分析\lesson4\mathmetician.xls'
+filename1 = 'mathmetician.xls'
 data1 = pd.read_excel(filename1)
 n = data1.shape[0]
 p = data1.shape[1]
@@ -41,14 +41,14 @@ optimal_theta, mse = gradient_descent(X, y, learning_rate, n_iterations, min_err
 plt.plot(range(len(mse_history)), mse_history)
 plt.xlabel('No. of iterations')
 plt.ylabel('Cost function')
-plt.title('Name:OuYang JH,alpha=0.001,tol=1e-06,k=270000')
+plt.title('alpha=0.001,tol=1e-06,k=270000')
 plt.ylim(0, 6)
 plt.show()
 
 print("θ:", optimal_theta)
 print("Cost function:", mse)
 -----------------------------------------------------------------------------------------
-file_path = "C:\大学\数据分析\lesson9\department.txt"
+file_path = "department.txt"
 
 try:
     X1 = []
@@ -114,7 +114,7 @@ optimal_theta, loss_history, loss = logistic_regression(X, y, learning_rate, num
 plt.plot(range(len(loss_history)), loss_history)
 plt.xlabel('No. of iterations')
 plt.ylabel('Cost function')
-plt.title('Name:OuYang JH,alpha=0.001,tol=1e-06,k=22500')
+plt.title('alpha=0.001,tol=1e-06,k=22500')
 plt.ylim(0, 1)
 plt.show()
 
@@ -133,5 +133,6 @@ x_line = np.linspace(min(x_data), max(x_data), 100)
 y_line = (-optimal_theta[1] * x_line - optimal_theta[0]) / optimal_theta[2]
 plt.plot(x_line, y_line, label='Decision Boundary', color='red')
 plt.show()
+
 
 
