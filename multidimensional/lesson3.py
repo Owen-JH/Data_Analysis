@@ -54,7 +54,7 @@ if ks_p_value < alpha:
 else:
     print("无法拒绝 H0，数据可能符合 Weibull 分布。")
 ------------------------------------------------------------------------------------------------------------
-filename3 = r'lesson3\height.xls'
+filename3 = r'height.xls'
 data3 = pd.read_excel(filename3, header=None)
 x3 = data3.values.flatten()
 xbar3 = np.mean(x3)
@@ -177,6 +177,7 @@ for i in range(data5.shape[1]):
         rij = stats.spearmanr(data5.iloc[:, i], data5.iloc[:, j])
         spearman_p[i, j] = rij[1]
 print("Spearman相关性检验:\n",spearman_p)
+
 
 
 
