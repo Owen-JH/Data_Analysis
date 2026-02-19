@@ -6,7 +6,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error
 
-file_path1 = "C:\大学\数据分析\lesson10\lesson10.txt"
+file_path1 = "lesson10.txt"
 
 try:
     X = []
@@ -65,11 +65,11 @@ Y_fit = X_range_poly.dot(optimal_theta)
 plt.plot(X_range, Y_fit, color='red', label="Fitted Curve")
 plt.xlabel("X")
 plt.ylabel("Y")
-plt.title('Name:OuYang JH,λ=0')
+plt.title('λ=0')
 plt.legend()
 plt.show()
 -----------------------------------------------------------------------------------------
-file_path2 = "C:\大学\数据分析\lesson10\microchips.txt"
+file_path2 = "microchips.txt"
 try:
     X1 = []
     X2 = []
@@ -115,9 +115,10 @@ plt.scatter(X[:, 0], X[:, 1], c=Y, cmap=plt.cm.Paired, marker='o', label='y=0 (C
 plt.contour(X1, X2, Y_grid, levels=[0.5], colors='red')
 plt.xlabel('X1')
 plt.ylabel('X2')
-plt.title('Name:OuYang JH,λ=0')
+plt.title('λ=0')
 plt.legend()
 plt.show()
+
 
 
 
